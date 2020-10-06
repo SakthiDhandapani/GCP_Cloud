@@ -17,7 +17,7 @@ module "vpc" {
   env_name                = "${var.var_env_name}"
   auto_create_subnetworks = "${var.var_auto_create_subnetworks}"
 }
-module "serviceproject" {
+/*module "serviceproject" {
   source              = "../modules/serviceProject"
   service_project_ids = "${var.var_service_project_ids}"
   depends_on          = ["module.hostproject"]
@@ -26,4 +26,13 @@ module "hostproject" {
   source  = "../modules/hostProject"
   project = "${var.var_host_project_id}"
 
+}*/
+module "vpc_peering"{
+  source = "../modules/vpc_peering"
+  dest_project_name ="${var.var_dest_project_name}"
+  source_project_name="${var.var_source_project_name}"
+  dest_project_network_name="${var.var_dest_project_network_name}"
+  source_project_network_name="${var.var_source_project_network_name}"
+  depends_on   = ["module.vpc"]
 }
+

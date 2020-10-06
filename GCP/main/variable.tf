@@ -1,8 +1,8 @@
 variable "config_path"{
-    default = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.json"
+    default = "XXXXXXXXXXXXXXX.json"
 }
 variable "gcp_project"{
-    default ="XXXXXXXXX"
+    default ="xxxxxx"
 }
 variable "var_region"{
     default ="us-west1"
@@ -24,4 +24,20 @@ variable "var_host_project_id"{
 }
 variable "service_project_ids"{
     description="Enter the service project ids"
+}
+variable "var_source_project_network_name"{
+    description ="Enter the source project network name"
+    default="dev-vpc"
+}
+variable "var_dest_project_network_name"{
+    description ="Enter the Destination project network name"
+    default ="kube-vpc"
+}
+variable "var_dest_project_name"{
+    description ="Enter the Destination Project Name"
+    default="xxxxxx"
+}
+variable "var_source_project_name"{
+    description ="Enter the Source Project Name"
+    default ="xxxxxx"
 }
